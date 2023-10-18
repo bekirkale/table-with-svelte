@@ -1,14 +1,16 @@
 <script>
-	import Table from './table.svelte'
-	let row
-	let column
+import Tablecreator from './table-creator.svelte'
+let activeProject=""
+
 </script>
 
-<input type="number" min=0 bind:value={row}>
-<input type="number" min=0 bind:value={column}>
 
-{#if row>0 && column>0}
-	<Table r={row} c={column}/>
-{/if}
+<div id="project-names" >
+	<button on:click={ () = > activeProject="table-creator" }>Table Creator</button>
+</div>
 
-
+<div id="projects">
+	{#if activeProject=="table-creator"}
+	<Tablecreator />
+	{/if}
+</div>
