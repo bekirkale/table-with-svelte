@@ -7,6 +7,7 @@ import Qa from './qa.svelte'
 <div id="project-names" >
 	<button on:click={() => activeProject="table-creator" }>Table Creator</button>
 	<button on:click={ () => activeProject="QAs"}>QAs</button>
+	<button on:click={ () => activeProject="Pool"}>Pool</button>
 </div>
 
 <div>::::::::::</div>
@@ -16,6 +17,8 @@ import Qa from './qa.svelte'
 		<Tablecreator />
 	{:else if activeProject=="QAs"}
 		<Qa />
+	{:else if activeProject=="Pool"}
+		<Pool />
 	{/if}
 </div>
 
